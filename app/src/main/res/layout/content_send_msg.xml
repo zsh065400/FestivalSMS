@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="org.laosao.festivalsms.SendMsgActivity"
+    >
+    <!--tools:showIn="@layout/activity_send_msg"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etContent"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/sms_item"
+            android:maxHeight="180dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#777"
+            android:textSize="14sp"
+            />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="添加联系人"/>
+
+        <org.laosao.festivalsms.FlowLayout
+            android:id="@+id/flContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </org.laosao.festivalsms.FlowLayout>
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:src="@mipmap/icon_send"
+        app:backgroundTint="@color/mainColor"
+        app:borderWidth="0dp"/>
+
+    <FrameLayout
+        android:id="@+id/flLoadingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#bbb"
+        android:clickable="true"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="发送中..."
+                />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
